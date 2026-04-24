@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Gestor de Tareas</h1>
+    <p>Bienvenido, <span id="username-display"></span></p>
+  </header>
+
+  <main>
+    <section id="login-section">
+      <h2>Iniciar Sesión</h2>
+      <input type="text"     id="username" placeholder="Usuario" />
+      <input type="password" id="password" placeholder="Contraseña" />
+      <button onclick="login()">Entrar</button>
+      <p id="login-error" style="color:red;"></p>
+    </section>
+
+    <section id="app-section" style="display:none;">
+      <div id="add-task">
+        <h2>Nueva Tarea</h2>
+        <input type="text" id="task-input" placeholder="Escribe una tarea..." />
+        <input type="text" id="task-category" placeholder="Categoría" />
+        <button onclick="addTask()">Agregar</button>
+      </div>
+
+      <div id="search-section">
+        <input type="text" id="search-input" placeholder="Buscar tarea..." oninput="searchTask()" />
+      </div>
+
+      <ul id="task-list"></ul>
+
+      <div id="stats">
+        <p>Total de tareas: <span id="total-tasks">0</span></p>
+        <p>Completadas: <span id="done-tasks">0</span></p>
+      </div>
+
+      <button onclick="logout()">Cerrar Sesión</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
